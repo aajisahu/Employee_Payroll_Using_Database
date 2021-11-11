@@ -117,7 +117,6 @@ public class Employee {
     public void setNetPay(double netPay) {
         NetPay = netPay;
     }
-
     @Override
     public String toString() {
         return "model.Employee{" +
