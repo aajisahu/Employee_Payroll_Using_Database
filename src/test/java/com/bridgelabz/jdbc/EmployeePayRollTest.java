@@ -1,6 +1,5 @@
 package com.bridgelabz.jdbc;
 
-
 import org.junit.Assert;
 import org.junit.Test;
 
