@@ -32,5 +32,4 @@ public class EmployeeConfig {
     public static Connection getConfig(){
         return connection;
     }
-
 }
