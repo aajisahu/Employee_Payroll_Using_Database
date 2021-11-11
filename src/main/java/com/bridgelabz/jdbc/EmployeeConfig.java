@@ -9,7 +9,7 @@ public class EmployeeConfig {
     public Connection getConfig(){
         String URL_JD = "jdbc:mysql://localhost:3306/payroll_service";
         String USER_NAME = "root";
-        String PASSWORD = "Ua65ml143";
+        String PASSWORD = "root";
         Connection connection;
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
