@@ -3,8 +3,11 @@ package com.bridgelabz.jdbc;
 
 import org.junit.Assert;
 import org.junit.Test;
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> UC3_Update_Basic_Pay_
 import java.util.List;
 
 public class EmployeePayRollTest {
