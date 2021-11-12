@@ -27,18 +27,17 @@ public class EmployeePayRollService {
             while (resultSet.next()) {
                 Employee employee = new Employee();
 
-                employee.setEmpId(resultSet.getInt("EmpId"));
-                employee.setEmpName(resultSet.getString("EmpName"));
-                employee.setPhoneNumber(resultSet.getString("PhoneNumber"));
-                employee.setAddress(resultSet.getString("Address"));
-                employee.setDepartment(resultSet.getString("Department"));
-                employee.setEmpStart(resultSet.getString("EmpStart"));
-                employee.setBasicPay(resultSet.getDouble("BasicPay"));
-                employee.setGender(resultSet.getString("Gender"));
-                employee.setDeductions(resultSet.getDouble("Deductions"));
-                employee.setTaxablePay(resultSet.getDouble("TaxablePay"));
-                employee.setIncomeTax(resultSet.getDouble("IncomeTax"));
-                employee.setNetPay(resultSet.getDouble("NetPay"));
+                employee.setID(resultSet.getInt("id"));
+				employee.setName(resultSet.getString("name"));
+				employee.setPhoneNumber(resultSet.getInt("phone"));
+				employee.setAddress(resultSet.getString("address"));
+				employee.setDepartment(resultSet.getString("department"));
+				employee.setStart(resultSet.getString("start"));
+				employee.setBasicPay(resultSet.getDouble("basic_pay"));
+				employee.setDeductions(resultSet.getDouble("deductions"));
+				employee.setTaxablePay(resultSet.getDouble("taxable_pay"));
+				employee.setIncomeTax(resultSet.getDouble("tax"));
+				employee.setNetPay(resultSet.getDouble("net_pay"));
 
                 empList.add(employee);
             }
@@ -64,7 +63,7 @@ public class EmployeePayRollService {
  * @return
  */
     public double updateBasicPay(String empName, double basicPay) {
-        String UPDATE = "UPDATE employee_payroll SET BasicPay = ? WHERE EmpName = ?";
+        String UPDATE = "UPDATE employee_payroll SET basic_pay = ? WHERE EmpName = ?";
         try {
             preparedStatement = connection.prepareStatement(UPDATE);
             preparedStatement.setDouble(1, basicPay);
@@ -78,7 +77,7 @@ public class EmployeePayRollService {
         String sql = "SELECT * FROM employee_payroll";
         queryExecute(sql);
         for (Employee employee : empList) {
-            if (employee.getEmpName().equals(empName)) {
+            if (employee.getName().equals(empName)) {
                 return employee.getBasicPay();
             }
         }
@@ -103,18 +102,18 @@ public class EmployeePayRollService {
             while (resultSet.next()) {
                 Employee employee = new Employee();
 
-                employee.setEmpId(resultSet.getInt("EmpId"));
-                employee.setEmpName(resultSet.getString("EmpName"));
-                employee.setPhoneNumber(resultSet.getString("PhoneNumber"));
-                employee.setAddress(resultSet.getString("Address"));
-                employee.setDepartment(resultSet.getString("Department"));
-                employee.setEmpStart(resultSet.getString("EmpStart"));
-                employee.setBasicPay(resultSet.getDouble("BasicPay"));
-                employee.setGender(resultSet.getString("Gender"));
-                employee.setDeductions(resultSet.getDouble("Deductions"));
-                employee.setTaxablePay(resultSet.getDouble("TaxablePay"));
-                employee.setIncomeTax(resultSet.getDouble("IncomeTax"));
-                employee.setNetPay(resultSet.getDouble("NetPay"));
+                employee.setID(resultSet.getInt("id"));
+                employee.setName(resultSet.getString("name"));
+                employee.setPhoneNumber(resultSet.getInt("phone"));
+                employee.setAddress(resultSet.getString("address"));
+                employee.setDepartment(resultSet.getString("department"));
+                employee.setStart(resultSet.getString("start"));
+                employee.setBasicPay(resultSet.getDouble("basic_pay"));
+                employee.setGender(resultSet.getString("gender"));
+                employee.setDeductions(resultSet.getDouble("deductions"));
+                employee.setTaxablePay(resultSet.getDouble("taxable_pay"));
+                employee.setIncomeTax(resultSet.getDouble("tax"));
+                employee.setNetPay(resultSet.getDouble("net_pay"));
 
                 empSelected.add(employee);
             }
@@ -127,7 +126,7 @@ public class EmployeePayRollService {
     }
     
     /**
-     *this method is used to find sum, average, min, max from the payroll_service table
+     *This method is used to find sum, average, min, max from the payroll_service table
      * 
      */
 
@@ -137,7 +136,7 @@ public class EmployeePayRollService {
 		final int EXIT = 6;
 		int choice = 0;
 		while (choice != EXIT) {
-			System.out.println("enter your choice\n1. SUM\n2. AVG\n3. MIN\n4. MAX  \n5.COUNT\n6.EXIT\n");
+			System.out.println("Enter Your Choice \n1. SUM\n2. AVG\n3. MIN\n4. MAX  \n5.COUNT\n6.EXIT\n");
 			choice = scanner.nextInt();
 			switch (choice) {
 			case 1:
