@@ -35,7 +35,6 @@ public class EmployeePayRoll {
 			case 3:
 				employeePayRollService.display();
 				break;
-
 			case 4:
 				System.out.println("enter initial date");
 				LocalDate iDate = LocalDate.parse(scanner.next());
