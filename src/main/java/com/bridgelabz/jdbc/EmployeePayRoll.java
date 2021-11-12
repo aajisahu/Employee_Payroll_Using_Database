@@ -24,7 +24,6 @@ public class EmployeePayRoll {
 				employeePayRollService.queryExecute(query);
 				employeePayRollService.display();
 				break;
-
 			case 2:
 				System.out.println("enter employee name");
 				String empName = scanner.next();
