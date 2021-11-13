@@ -8,6 +8,9 @@ import java.util.Scanner;
  *
  */
 
+import java.time.LocalDate;
+import java.util.Scanner;
+
 public class EmployeePayRoll {
 	public static void main(String[] args) {
 		EmployeePayRollService employeePayRollService = new EmployeePayRollService();
@@ -24,23 +27,25 @@ public class EmployeePayRoll {
 				employeePayRollService.queryExecute(query);
 				employeePayRollService.display();
 				break;
+
 			case 2:
 				System.out.println("enter employee name");
 				String empName = scanner.next();
 				System.out.println("enter basic pay you want to update");
-				double basic_pay = scanner.nextDouble();
-				employeePayRollService.updateBasicPay(empName, basic_pay);
+				double basicPay = scanner.nextDouble();
+				employeePayRollService.updateBasicPay(empName, basicPay);
 				break;
 
 			case 3:
 				employeePayRollService.display();
 				break;
+
 			case 4:
 				System.out.println("enter initial date");
 				LocalDate iDate = LocalDate.parse(scanner.next());
 				System.out.println("enter final date");
 				LocalDate eDate = LocalDate.parse(scanner.next());
-				employeePayRollService.selectEmployee(iDate, eDate);
+				employeePayRollService.getEmployee(iDate, eDate);
 				break;
 
 			case 5:
@@ -48,12 +53,13 @@ public class EmployeePayRoll {
 				break;
 
 			case 6:
-				System.out.println("Good Bye");
-				System.exit(0);
+				System.out.println("good bye");
+				break;
 
 			}
 		}
+		scanner.close();
 	}
-	
+
 
 }
