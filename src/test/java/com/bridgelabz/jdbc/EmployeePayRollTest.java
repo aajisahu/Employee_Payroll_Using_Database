@@ -31,5 +31,4 @@ public class EmployeePayRollTest {
 		double salaryUpdated = employeePayRollService.updateBasicPay(Name, BasicPay);
 		Assert.assertEquals(BasicPay, salaryUpdated, 0.0);
 	}
-
 }
