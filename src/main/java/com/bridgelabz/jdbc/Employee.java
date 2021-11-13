@@ -1,19 +1,13 @@
 package com.bridgelabz.jdbc;
 
-import java.util.ArrayList;
-
-/**
- * Purpose: This class is used for getter and setter methods
- * @author ASHISH SAHU
- *
- */
 
 import java.util.ArrayList;
+
+
 
 public class Employee {
 
-	int ID;
-	int PhoneNumber;
+	int ID, PhoneNumber;
 	String Name, Address, Department, Start, Gender;
 	double BasicPay, Deductions, TaxablePay, IncomeTax, NetPay;
 
@@ -29,8 +23,8 @@ public class Employee {
 		return PhoneNumber;
 	}
 
-	public void setPhoneNumber(int num) {
-		PhoneNumber = num;
+	public void setPhoneNumber(int phoneNumber) {
+		PhoneNumber = phoneNumber;
 	}
 
 	public String getName() {
